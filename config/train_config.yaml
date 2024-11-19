@@ -1,0 +1,16 @@
+train_params:
+    model: "microsoft/deberta-v3-base"
+    model_checkpoint: 'ai-detector-coling2025/src/training/model_checkpoints/final_model'
+    stage: 'first' # 'second'
+    output_dir: 'ai-detector-coling2025/src/training/model_checkpoints/'
+    epochs: 1
+    learning_rate: 0.0003
+    warmup_steps: 50
+    batch_size: 16
+    metric_for_best_model: 'full_data_macro_f1'
+    eval_steps: 110
+    tasks:
+        full_data: 2
+        hc3: 5
+        m4gt: 6
+        mage: 14
